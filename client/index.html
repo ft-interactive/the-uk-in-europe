@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en-GB" class="core">
+<html lang="en-GB" class="core" ng-app="app">
   <head>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 
     <!--
       TODO: FILL IN THESE MANDATORY TAGS AND
-            REMOVE THIS COMMENT
+            REMOVE THIS COMMENT -->
 
     <title>@@TITLE</title>
     <meta name="twitter:title" content="@@TITLE">
@@ -27,7 +27,6 @@
     <link rel="image_src" href="@@IMAGE">
     <meta name="twitter:image" content="@@IMAGE">
     <meta property="og:image" content="@@IMAGE">
-    -->
 
 
     <!--
@@ -77,7 +76,7 @@
     <meta name="theme-color" content="#fff1e0" />
 
     <include src="includes/analytics-ga.html"></include>
-  
+
   </head>
   <body>
 
@@ -117,6 +116,8 @@
     <include src="includes/footer.html"></include>
 
     <!-- build:js scripts/main.js -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="scripts/main.bundle.js"></script>
     <!-- endbuild -->
   </body>
