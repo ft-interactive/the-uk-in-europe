@@ -1,26 +1,35 @@
-// TODO: flag UK circle on click
-// TODO: add splash screen for correct/incorrect
-// TODO: add custom GA event tracking
+var attachFastClick = require('fastclick');
+attachFastClick(document.body);
 
-const app = angular.module('app', ['ngAnimate']);
+var app = angular.module('app', ['ngAnimate']);
 
-app.controller('GfxCtrl', ['$scope', '$window', '$animate', function ($scope, $window, $animate) {
-  $scope.hover = {};
-  $scope.quizOver = false;
+app.controller('GfxCtrl', ['$scope', '$window', '$animate', '$timeout',
+  function ($scope, $window, $animate, $timeout) {
+    $scope.hover = {};
+    $scope.quizOver = false;
 
-  $scope.isGroup8 = () => {
-    console.log('Group 8');
+    $scope.isGroup8 = function () {
+      $scope.showSplash = true;
+      $timeout(() => {
+        $scope.showSplash = false;
+      }, 250);
 
-    $scope.quizOver = true;
-    $scope.answeredHeading = 'Heading that shows if you get it RIGHT!';
-    $window.ga('send', 'event', 'Responses', 'submit', 1);
-  };
+      $scope.isCorrect = true;
+      $scope.quizOver = true;
+      $scope.answeredHeading = 'Impressive! You know your EU';
+      $window.ga('send', 'event', 'Responses', 'submit', 'Correct');
+    };
 
-  $scope.isGroupN = () => {
-    console.log('Not group 8');
+    $scope.isGroupN = function () {
+      $scope.showSplash = true;
+      $timeout(() => {
+        $scope.showSplash = false;
+      }, 250);
 
-    $scope.quizOver = true;
-    $scope.answeredHeading = 'Heading that shows if you get it WRONG!';
-    $window.ga('send', 'event', 'Responses', 'submit', 0);
-  };
-}]);
+      $scope.isIncorrect = true;
+      $scope.quizOver = true;
+      $scope.answeredHeading = 'Unlucky! But you\'ve come to the right place';
+      $window.ga('send', 'event', 'Responses', 'submit', 'Incorrect');
+    };
+  }
+]);

@@ -8,25 +8,21 @@
     <link rel="preconnect" href="https://origami-build.ft.com/">
     <link rel="preconnect" href="https://cdn.polyfill.io/">
 
-    <!--
-      TODO: FILL IN THESE MANDATORY TAGS AND
-            REMOVE THIS COMMENT -->
+    <title>The UK in Europe: a visual guide to Brexit | FT.com</title>
+    <meta name="twitter:title" content="The UK in Europe: a visual guide to Brexit">
+    <meta property="og:title" content="The UK in Europe: a visual guide to Brexit">
 
-    <title>@@TITLE</title>
-    <meta name="twitter:title" content="@@TITLE">
-    <meta property="og:title" content="@@TITLE">
+    <meta name="description" content="What you need to know ahead of Britain's historic EU vote">
+    <meta name="twitter:description" content="What you need to know ahead of Britain's historic EU vote">
+    <meta property="og:description" content="What you need to know ahead of Britain's historic EU vote">
 
-    <meta name="description" content="@@DESCRIPTION">
-    <meta name="twitter:description" content="@@DESCRIPTION">
-    <meta property="og:description" content="@@DESCRIPTION">
+    <link rel="canonical" href="https://ig.ft.com/sites/the-uk-in-europe">
+    <meta name="twitter:url" content="https://ig.ft.com/sites/the-uk-in-europe">
+    <meta property="og:url" content="https://ig.ft.com/sites/the-uk-in-europe">
 
-    <link rel="canonical" href="@@URL">
-    <meta name="twitter:url" content="@@URL">
-    <meta property="og:url" content="@@URL">
-
-    <link rel="image_src" href="@@IMAGE">
-    <meta name="twitter:image" content="@@IMAGE">
-    <meta property="og:image" content="@@IMAGE">
+    <link rel="image_src" href="https://image.webservices.ft.com/v1/images/raw/ftcms:96361d6a-3327-11e6-ad39-3fee5ffe5b5b?source=ig&width=600">
+    <meta name="twitter:image" content="https://image.webservices.ft.com/v1/images/raw/ftcms:96361d6a-3327-11e6-ad39-3fee5ffe5b5b?source=ig&width=600">
+    <meta property="og:image" content="https://image.webservices.ft.com/v1/images/raw/ftcms:96361d6a-3327-11e6-ad39-3fee5ffe5b5b?source=ig&width=600">
 
 
     <!--
@@ -52,6 +48,10 @@
     <script src="scripts/top.js"></script>
     <!-- endbuild -->
     <!-- endsmoosh -->
+
+    <script src="scripts/fastclick.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
 
     <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=n-normalize@^1,o-fonts@^2">
     <link rel="stylesheet" href="https://origami-build.ft.com/v2/bundles/css?modules=o-grid@^4,o-typography@^4">
@@ -80,14 +80,11 @@
   </head>
   <body>
 
-    <!--
-      REPLACE THIS COMMENT WITH A TRACKING SNIPPET
-      http://ft-interactive.github.io/tracking-snippet-generator/
-    -->
+    <script>(function(){function init(){var oTracking=Origami['o-tracking'];oTracking.init({server:'https://spoor-api.ft.com/px.gif',system:{is_live:true},context:{product:'IG'}});oTracking.link.init();oTracking.page({"content":{"asset_type":"interactive","uuid":"0782940a-3321-11e6-bda0-04585c31b153"}});}var o=document.createElement('script');o.async=o.defer=true;o.src='https://origami-build.ft.com/v2/bundles/js?modules=o-tracking';var s=document.getElementsByTagName('script')[0];if(o.hasOwnProperty('onreadystatechange')){o.onreadystatechange=function(){if(o.readyState==='loaded'){init();}};}else{o.onload=init;}s.parentNode.insertBefore(o,s);}());</script><noscript data-o-component="o-tracking"><img src="https://spoor-api.ft.com/px.gif?data=%7B%22action%22%3A%22view%22%2C%22category%22%3A%22page%22%2C%22context%22%3A%7B%22content%22%3A%7B%22asset_type%22%3A%22interactive%22%2C%22uuid%22%3A%220782940a-3321-11e6-bda0-04585c31b153%22%7D%2C%22product%22%3A%22IG%22%7D%2C%22system%22%3A%7B%22is_live%22%3Atrue%2C%22apiKey%22%3A%22qUb9maKfKbtpRsdp0p2J7uWxRPGJEP%22%2C%22source%22%3A%22o-tracking-ns%22%2C%22version%22%3A%221.0.0%22%7D%7D" height="1" width="1" /></noscript>
 
     <include src="includes/header.html"></include>
 
-    <main role="main">
+    <main role="main" ng-controller="GfxCtrl" ng-init="hide = 'hidden'" ng-cloak>
       <article class="article">
 
         <div class="article-head o-grid-container">
@@ -97,27 +94,68 @@
               <include src="includes/share.html"></include>
 
               <!-- REPLACE THIS with your article head html -->
-              <include src="includes/mock-article-head.html"></include>
+              <include src="includes/article-head.html"></include>
 
             </header>
           </div>
         </div>
+      </article>
 
+      <div class="o-grid-container">
+        <div class="o-grid-row">
+          <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+            <h2>Find the UK in Europe</h2>
+            <p class="o-typography-body">
+              Each grey dot in the diagram below represents a European nation. Which do you think represents Britain's current place in Europe? <strong>Click or tap one to see whether you're right, then keep scrolling for the article.</strong>
+            </p>
+            <div style="text-align: center; margin-bottom: 6px;">
+              <button class="o-buttons o-buttons--standout o-buttons--big" ng-click="quizOver = true">Skip This</button>
+            </div>
+          </div>
+        </div>
+        <div class="o-grid-row">
+          <div data-o-grid-colspan="12 S11 Scenter M10 L9 XL8 center">
+            <div class="eu-structure-container">
+              <include src="assets/eu-structure-landscape.svg"></include>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article class="article">
         <div class="article-body o-typography-body-wrapper">
 
           <!-- REPLACE THIS with your article body html -->
-          <include src="includes/mock-article-content.html"></include>
+          <include src="includes/article-content.html"></include>
 
         </div>
       </article>
+
+      <div class="splash animate-splash"
+        ng-class="{correct: isCorrect, incorrect: isIncorrect}"
+        ng-show="showSplash">
+        <div class="o-big-number__title animate-splash">
+          <div ng-show="isCorrect">
+            Correct
+            <div>
+              <i class="icon-thumb-up"></i>
+            </div>
+          </div>
+
+          <div ng-show="isIncorrect">
+            Incorrect
+            <div>
+              <i class="icon-thumb-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
 
     <include src="includes/footer.html"></include>
 
     <!-- build:js scripts/main.js -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="scripts/main.bundle.js"></script>
     <!-- endbuild -->
   </body>

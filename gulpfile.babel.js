@@ -38,6 +38,10 @@ const BROWSERIFY_TRANSFORMS = [
 
 const OTHER_SCRIPTS = [
   'scripts/top.js',
+  'scripts/fastclick.js',
+  'scripts/angular.min.js',
+  'scripts/angular-animate.min.js',
+  'scripts/smil-in-javascript.js',
 ];
 
 let env = 'development';
